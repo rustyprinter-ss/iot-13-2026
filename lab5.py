@@ -3,12 +3,12 @@ class Fish:
                  preferred_food="Невідомо", is_aggressive=False,
                  needed_space=0.0):
         self.__name = name
-        self.__age = age
+        self.__age = max(0, age)
         self.__species = species
-        self.__size = size
+        self.__size = max(0.0, size)
         self.__preferred_food = preferred_food
         self.__is_aggressive = is_aggressive
-        self.__needed_space = needed_space
+        self.__needed_space = max(0.0, needed_space)
 
     def get_name(self):
         return self.__name
@@ -52,7 +52,7 @@ class Fish:
 
 class Aquarium:
     def __init__(self, total_volume=0.0):
-        self.__total_volume = total_volume
+        self.__total_volume = max(0.0, total_volume)
         self.__free_space = total_volume
         self.__fishes = []
 
